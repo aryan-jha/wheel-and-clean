@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:wheel_and_clean/screens/landing_screen.dart';
+import 'package:wheel_and_clean/screens/tutorial_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const LandingScreen(),
+            builder: (context) => const TutorialScreen(),
           ));
     });
   }
@@ -37,14 +37,16 @@ class _SplashScreenState extends State<SplashScreen> {
               padding: const EdgeInsets.only(top: 350),
               child: Center(
                   child: Image.asset(
-                      'assets/splashAsset/Auto Layout Vertical.png')),
+                      'assets/screensAsset/Auto Layout Vertical.png')),
             ),
             const SizedBox(height: 20),
             Column(
               children: [
                 Center(
                     child: Image.asset(
-                        'assets/splashAsset/Animation - splash.png')),
+                        'assets/screensAsset/Animation - splash.png')),
+
+                        
               ],
             )
           ],
