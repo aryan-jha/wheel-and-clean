@@ -17,7 +17,8 @@ class _TempScreenState extends State<TempScreen> {
         children: [
           Center(
             child: Container(
-              height: 500,
+              height: MediaQuery.of(context).size.height * 0.55,
+              width: double.infinity,
               decoration: BoxDecoration(
                 // color: Colors.red,
                 borderRadius: BorderRadius.vertical(

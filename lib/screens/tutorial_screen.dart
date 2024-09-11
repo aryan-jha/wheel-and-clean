@@ -26,22 +26,29 @@ class _TutorialScreenState extends State<TutorialScreen> {
       body: Stack(
         children: [
           PageView(
+            scrollBehavior: ScrollBehavior(),
             onPageChanged: onChanged,
             controller: pageController,
             children: [
               Column(
                 children: [
                   Container(
+                      height: MediaQuery.of(context).size.height * 0.55,
                       width: double.infinity,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                           // color: Colors.amber,
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(600),
-                              bottomRight: Radius.circular(600))),
-                      child: Image.asset(
-                          fit: BoxFit.cover,
-                          height: 500,
-                          'assets/screensAsset/tut1.png')),
+                          borderRadius: BorderRadius.vertical(
+                              bottom: Radius.elliptical(
+                                  MediaQuery.of(context).size.width, 100.0))),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.vertical(
+                            bottom: Radius.elliptical(
+                                MediaQuery.of(context).size.width, 100.0)),
+                        child: Image.asset(
+                            fit: BoxFit.cover,
+                            height: 500,
+                            'assets/screensAsset/tut1.png'),
+                      )),
                   const SizedBox(
                     height: 20,
                   ),
@@ -60,16 +67,23 @@ class _TutorialScreenState extends State<TutorialScreen> {
               Column(
                 children: [
                   Container(
+                      height: MediaQuery.of(context).size.height * 0.55,
                       width: double.infinity,
-                      decoration: const BoxDecoration(
-                          // color: Colors.amber,
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(60),
-                              bottomRight: Radius.circular(60))),
-                      child: Image.asset(
-                          fit: BoxFit.cover,
-                          height: 500,
-                          'assets/screensAsset/tut2.png')),
+                      decoration: BoxDecoration(
+                        // color: Colors.amber,
+                        borderRadius: BorderRadius.vertical(
+                            bottom: Radius.elliptical(
+                                MediaQuery.of(context).size.width, 100.0)),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.vertical(
+                            bottom: Radius.elliptical(
+                                MediaQuery.of(context).size.width, 100.0)),
+                        child: Image.asset(
+                            fit: BoxFit.cover,
+                            height: 500,
+                            'assets/screensAsset/tut2.png'),
+                      )),
                   const SizedBox(
                     height: 20,
                   ),
@@ -91,17 +105,24 @@ class _TutorialScreenState extends State<TutorialScreen> {
               Column(
                 children: [
                   Container(
+                    height: MediaQuery.of(context).size.height * 0.55,
                     width: double.infinity,
-                    decoration: const BoxDecoration(
-                        // color: Colors.amber,
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(15),
-                            bottomRight: Radius.circular(15))),
-                    child: Image.asset(
-                      fit: BoxFit.cover,
-                      height: 500,
-                      'assets/screensAsset/tut3.png',
-                      width: double.infinity,
+                    decoration: BoxDecoration(
+                      // color: Colors.amber,
+                      borderRadius: BorderRadius.vertical(
+                          bottom: Radius.elliptical(
+                              MediaQuery.of(context).size.width, 100.0)),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.vertical(
+                          bottom: Radius.elliptical(
+                              MediaQuery.of(context).size.width, 100.0)),
+                      child: Image.asset(
+                        fit: BoxFit.cover,
+                        height: 500,
+                        'assets/screensAsset/tut3.png',
+                        width: double.infinity,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -153,60 +174,67 @@ class _TutorialScreenState extends State<TutorialScreen> {
                       // crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Row(
-                          children: [
-                            InkWell(
-                              onTap: () => pageController.jumpToPage(2),
-                              child: Container(
-                                height: 58,
-                                width: 159.5,
-                                decoration: BoxDecoration(
-                                    color: const Color(0xffF1F0FF),
-                                    borderRadius: BorderRadius.circular(60)),
-                                child: const Center(
-                                    child: Text("Skip",
-                                        style: TextStyle(
-                                            color: Color(0xff5546FF),
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w700))),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            children: [
+                              InkWell(
+                                onTap: () => pageController.jumpToPage(2),
+                                child: Container(
+                                  height: 58,
+                                  width: 159.5,
+                                  decoration: BoxDecoration(
+                                      color: const Color(0xffF1F0FF),
+                                      borderRadius: BorderRadius.circular(60)),
+                                  child: const Center(
+                                      child: Text("Skip",
+                                          style: TextStyle(
+                                              color: Color(0xff5546FF),
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w700))),
+                                ),
                               ),
-                            ),
-                            const SizedBox(
-                              width: 27,
-                            ),
-                            InkWell(
-                              onTap: () {
-                                pageController.nextPage(
-                                    duration: const Duration(milliseconds: 500),
-                                    curve: Curves.easeInOut);
-                              },
-                              child: Container(
-                                height: 58,
-                                width: 159.5,
-                                decoration: BoxDecoration(
-                                    color: const Color(0xff5546FF),
-                                    borderRadius: BorderRadius.circular(60)),
-                                child: Center(
-                                    child: Text("Continue",
-                                        style: blueButtonFontStyling)),
+                              const SizedBox(
+                                width: 27,
                               ),
-                            )
-                          ],
+                              InkWell(
+                                onTap: () {
+                                  pageController.nextPage(
+                                      duration:
+                                          const Duration(milliseconds: 500),
+                                      curve: Curves.easeInOut);
+                                },
+                                child: Container(
+                                  height: 58,
+                                  width: 159.5,
+                                  decoration: BoxDecoration(
+                                      color: const Color(0xff5546FF),
+                                      borderRadius: BorderRadius.circular(60)),
+                                  child: Center(
+                                      child: Text("Continue",
+                                          style: blueButtonFontStyling)),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     )
                   : Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Container(
-                          height: 58,
-                          width: 335,
-                          decoration: BoxDecoration(
-                              color: const Color(0xff5546FF),
-                              borderRadius: BorderRadius.circular(60)),
-                          child: Center(
-                              child: Text("Get Started",
-                                  style: blueButtonFontStyling)),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Container(
+                            height: 58,
+                            width: 335,
+                            decoration: BoxDecoration(
+                                color: const Color(0xff5546FF),
+                                borderRadius: BorderRadius.circular(60)),
+                            child: Center(
+                                child: Text("Get Started",
+                                    style: blueButtonFontStyling)),
+                          ),
                         ),
                       ],
                     ))
