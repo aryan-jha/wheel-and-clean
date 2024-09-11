@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:wheel_and_clean/themes/text_style.dart';
 
 class TutorialScreen extends StatefulWidget {
   const TutorialScreen({super.key});
@@ -44,20 +45,20 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
+                  Text(
                     "Top-notch doorstep bike \n           and car care.",
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: tutorialHeadlineFont,
+                    // style: TextStyle(
+                    //   fontSize: 28,
+                    //   fontWeight: FontWeight.w700,
+                    // ),
                   ),
                   const SizedBox(
                     height: 25,
                   ),
-                  const Text(
-                    "Delivers top-notch doorstep bike and car care \n                    for ultimate convenience.",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                  ),
+                  Text(
+                      "Delivers top-notch doorstep bike and car care \n                    for ultimate convenience.",
+                      style: tutorialDescriptionFont),
                 ],
               ),
               Column(
@@ -76,23 +77,22 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
+                  Text(
                     "Better service experience \n    than washing centers.",
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: tutorialHeadlineFont,
+                    // style: TextStyle(
+                    //   fontSize: 28,
+                    //   fontWeight: FontWeight.w700,
+                    // ),
                   ),
                   const SizedBox(
                     height: 25,
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     child: Text(
-                      "    Offers a superior service experience compared to traditional washing centers.",
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                    ),
+                        "    Offers a superior service experience compared to traditional washing centers.",
+                        style: tutorialDescriptionFont),
                   )
                 ],
               ),
@@ -115,23 +115,16 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    "Fully equipped for all \n       service needs.",
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
+                  Text("Fully equipped for all \n       service needs.",
+                      style: tutorialHeadlineFont),
                   const SizedBox(
                     height: 25,
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.symmetric(horizontal: 30),
                     child: Text(
-                      "Fully equipped for all service needs, ensuring \n                     a seamless experience.",
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                    ),
+                        "Fully equipped for all service needs, ensuring \n                     a seamless experience.",
+                        style: tutorialDescriptionFont),
                   )
                 ],
               )
@@ -197,12 +190,9 @@ class _TutorialScreenState extends State<TutorialScreen> {
                                 decoration: BoxDecoration(
                                     color: const Color(0xff5546FF),
                                     borderRadius: BorderRadius.circular(60)),
-                                child: const Center(
+                                child: Center(
                                     child: Text("Continue",
-                                        style: TextStyle(
-                                            color: Color(0XffFFFFFF),
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w700))),
+                                        style: blueButtonFontStyling)),
                               ),
                             )
                           ],
@@ -218,12 +208,9 @@ class _TutorialScreenState extends State<TutorialScreen> {
                           decoration: BoxDecoration(
                               color: const Color(0xff5546FF),
                               borderRadius: BorderRadius.circular(60)),
-                          child: const Center(
+                          child: Center(
                               child: Text("Get Started",
-                                  style: TextStyle(
-                                      color: Color(0XffFFFFFF),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700))),
+                                  style: blueButtonFontStyling)),
                         ),
                       ],
                     ))
