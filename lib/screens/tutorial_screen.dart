@@ -40,10 +40,8 @@ class _TutorialScreenState extends State<TutorialScreen> {
                           borderRadius: BorderRadius.vertical(
                               bottom: Radius.elliptical(
                                   MediaQuery.of(context).size.width, 100.0))),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.vertical(
-                            bottom: Radius.elliptical(
-                                MediaQuery.of(context).size.width, 100.0)),
+                      child: ClipPath(
+                        clipper: BottomCurveClipper(),
                         child: Image.asset(
                             fit: BoxFit.cover,
                             height: 500,
@@ -75,10 +73,8 @@ class _TutorialScreenState extends State<TutorialScreen> {
                             bottom: Radius.elliptical(
                                 MediaQuery.of(context).size.width, 100.0)),
                       ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.vertical(
-                            bottom: Radius.elliptical(
-                                MediaQuery.of(context).size.width, 100.0)),
+                      child: ClipPath(
+                        clipper: BottomCurveClipper(),
                         child: Image.asset(
                             fit: BoxFit.cover,
                             height: 500,
@@ -113,10 +109,8 @@ class _TutorialScreenState extends State<TutorialScreen> {
                           bottom: Radius.elliptical(
                               MediaQuery.of(context).size.width, 100.0)),
                     ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.vertical(
-                          bottom: Radius.elliptical(
-                              MediaQuery.of(context).size.width, 100.0)),
+                    child: ClipPath(
+                      clipper: BottomCurveClipper(),
                       child: Image.asset(
                         fit: BoxFit.cover,
                         height: 500,
@@ -169,77 +163,117 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   // left: 33,
                   horizontal: 20,
                   vertical: 30),
-              child: (currentPage < 2)
-                  ? Column(
-                      // crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Row(
-                            children: [
-                              InkWell(
-                                onTap: () => pageController.jumpToPage(2),
-                                child: Container(
-                                  height: 58,
-                                  width: 159.5,
-                                  decoration: BoxDecoration(
-                                      color: const Color(0xffF1F0FF),
-                                      borderRadius: BorderRadius.circular(60)),
-                                  child: const Center(
-                                      child: Text("Skip",
-                                          style: TextStyle(
-                                              color: Color(0xff5546FF),
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w700))),
-                                ),
+              child: AnimatedSwitcher(
+                  duration: Duration(milliseconds: 180),
+                  child: (currentPage < 2)
+                      ? Column(
+                          key: Key('1'),
+                          // crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Row(
+                                children: [
+                                  InkWell(
+                                    onTap: () => pageController.jumpToPage(2),
+                                    child: Container(
+                                      // key: Key('1'),
+                                      height: 58,
+                                      width: 159.5,
+                                      decoration: BoxDecoration(
+                                          color: const Color(0xffF1F0FF),
+                                          borderRadius:
+                                              BorderRadius.circular(60)),
+                                      child: const Center(
+                                          child: Text("Skip",
+                                              style: TextStyle(
+                                                  color: Color(0xff5546FF),
+                                                  fontSize: 16,
+                                                  fontWeight:
+                                                      FontWeight.w700))),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 27,
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      pageController.nextPage(
+                                          duration:
+                                              const Duration(milliseconds: 500),
+                                          curve: Curves.easeInOut);
+                                    },
+                                    child: Container(
+                                      height: 58,
+                                      width: 159.5,
+                                      decoration: BoxDecoration(
+                                          color: const Color(0xff5546FF),
+                                          borderRadius:
+                                              BorderRadius.circular(60)),
+                                      child: Center(
+                                          child: Text("Continue",
+                                              style: blueButtonFontStyling)),
+                                    ),
+                                  )
+                                ],
                               ),
-                              const SizedBox(
-                                width: 27,
+                            ),
+                          ],
+                        )
+                      : Column(
+                          key: Key('2'),
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              child: Container(
+                                // key: Key('2'),
+                                height: 58,
+                                width: 335,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xff5546FF),
+                                    borderRadius: BorderRadius.circular(60)),
+                                child: Center(
+                                    child: Text("Get Started",
+                                        style: blueButtonFontStyling)),
                               ),
-                              InkWell(
-                                onTap: () {
-                                  pageController.nextPage(
-                                      duration:
-                                          const Duration(milliseconds: 500),
-                                      curve: Curves.easeInOut);
-                                },
-                                child: Container(
-                                  height: 58,
-                                  width: 159.5,
-                                  decoration: BoxDecoration(
-                                      color: const Color(0xff5546FF),
-                                      borderRadius: BorderRadius.circular(60)),
-                                  child: Center(
-                                      child: Text("Continue",
-                                          style: blueButtonFontStyling)),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    )
-                  : Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Container(
-                            height: 58,
-                            width: 335,
-                            decoration: BoxDecoration(
-                                color: const Color(0xff5546FF),
-                                borderRadius: BorderRadius.circular(60)),
-                            child: Center(
-                                child: Text("Get Started",
-                                    style: blueButtonFontStyling)),
-                          ),
-                        ),
-                      ],
-                    ))
+                            ),
+                          ],
+                        )))
         ],
       ),
     );
+  }
+}
+
+class BottomCurveClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.moveTo(0, 0);
+
+    path.lineTo(size.width, 0);
+
+    path.lineTo(size.width, size.height - 50);
+
+    path.quadraticBezierTo(
+      size.width / 2,
+      size.height + 50,
+      0,
+      size.height - 50,
+    );
+
+    path.lineTo(0, 0);
+    path.close();
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
   }
 }
