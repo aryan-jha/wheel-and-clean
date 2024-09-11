@@ -42,11 +42,12 @@ class _SplashScreenState extends State<SplashScreen> {
             const SizedBox(height: 20),
             Column(
               children: [
-                Center(
-                    child: Image.asset(
-                        'assets/screensAsset/Animation - splash.png')),
-
-                        
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 60),
+                  child: Center(
+                      child: Image.asset(
+                          'assets/screensAsset/Animation - splash.png')),
+                ),
               ],
             )
           ],

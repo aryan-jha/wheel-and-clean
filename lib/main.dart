@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wheel_and_clean/Splash_screen/splash_screen.dart';
+import 'package:wheel_and_clean/screens/temp_screen.dart';
 import 'package:wheel_and_clean/screens/tutorial_screen.dart';
 
 void main() {
@@ -12,12 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const TutorialScreen(),
+      home: const TempScreen(),
     );
   }
 }

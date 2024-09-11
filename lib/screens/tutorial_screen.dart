@@ -48,10 +48,6 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   Text(
                     "Top-notch doorstep bike \n           and car care.",
                     style: tutorialHeadlineFont,
-                    // style: TextStyle(
-                    //   fontSize: 28,
-                    //   fontWeight: FontWeight.w700,
-                    // ),
                   ),
                   const SizedBox(
                     height: 25,
@@ -80,18 +76,14 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   Text(
                     "Better service experience \n    than washing centers.",
                     style: tutorialHeadlineFont,
-                    // style: TextStyle(
-                    //   fontSize: 28,
-                    //   fontWeight: FontWeight.w700,
-                    // ),
                   ),
                   const SizedBox(
                     height: 25,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 50),
+                    padding: EdgeInsets.symmetric(horizontal: 10),
                     child: Text(
-                        "    Offers a superior service experience compared to traditional washing centers.",
+                        "    Offers a superior service experience \ncompared to traditional washing centers.",
                         style: tutorialDescriptionFont),
                   )
                 ],
@@ -151,7 +143,11 @@ class _TutorialScreenState extends State<TutorialScreen> {
             ),
           ),
           Padding(
-              padding: const EdgeInsets.only(bottom: 38, left: 33),
+              padding: const EdgeInsets.symmetric(
+                  // bottom: 38,
+                  // left: 33,
+                  horizontal: 20,
+                  vertical: 30),
               child: (currentPage < 2)
                   ? Column(
                       // crossAxisAlignment: CrossAxisAlignment.end,
