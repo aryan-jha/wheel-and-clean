@@ -92,6 +92,15 @@ class _ServicesScreenState extends State<ServicesScreen> {
                 height: MediaQuery.of(context).size.height * 0.016,
               ),
               MyCard(
+                headline: "Interior Cleaning",
+                discountedPrice: "699",
+                discount: "30",
+                actualPrice: "1000",
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.016,
+              ),
+              MyCard(
                 headline: "Foam Wash & Interior Cleaning",
                 discountedPrice: "699",
                 discount: "30",

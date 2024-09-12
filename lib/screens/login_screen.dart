@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wheel_and_clean/buttons/my_buttons.dart';
+import 'package:wheel_and_clean/screens/services_screen.dart';
 import 'package:wheel_and_clean/themes/text_style.dart';
 
 class Loginscreen extends StatefulWidget {
@@ -81,7 +82,14 @@ class _LoginscreenState extends State<Loginscreen> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.050,
                 ),
-                button(value: "Submit", height: 58, width: 335)
+                InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ServicesScreen()));
+                    },
+                    child: button(value: "Submit", height: 58, width: 335))
               ],
             ),
           ),

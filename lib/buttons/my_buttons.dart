@@ -82,7 +82,7 @@ class MyCard extends StatelessWidget {
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
@@ -98,11 +98,36 @@ class MyCard extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 12),
-                child: Text(
-                  '$headline',
-                  style: headlineFont,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '$headline',
+                      style: headlineFont,
+                    ),
+                    Text(
+                      ". Pre-wash rinse",
+                      style: descriptionFont.copyWith(fontSize: 10),
+                    ),
+                    Text(
+                      ". Foam application",
+                      style: descriptionFont.copyWith(fontSize: 10),
+                    ),
+                    Text(
+                      ". Hand wash",
+                      style: descriptionFont.copyWith(fontSize: 10),
+                    ),
+                    Text(
+                      ". Wheel cleaning",
+                      style: descriptionFont.copyWith(fontSize: 10),
+                    ),
+                    Text(
+                      ". Rinse and dry",
+                      style: descriptionFont.copyWith(fontSize: 10),
+                    )
+                  ],
                 ),
-              )
+              ),
             ],
           ),
           Padding(
