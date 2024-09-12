@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:wheel_and_clean/screens/login_screen.dart';
 import 'package:wheel_and_clean/themes/text_style.dart';
 
 class TutorialScreen extends StatefulWidget {
@@ -229,16 +230,24 @@ class _TutorialScreenState extends State<TutorialScreen> {
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 20),
-                              child: Container(
-                                // key: Key('2'),
-                                height: 58,
-                                width: 335,
-                                decoration: BoxDecoration(
-                                    color: const Color(0xff5546FF),
-                                    borderRadius: BorderRadius.circular(60)),
-                                child: Center(
-                                    child: Text("Get Started",
-                                        style: blueButtonFontStyling)),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Loginscreen()));
+                                },
+                                child: Container(
+                                  // key: Key('2'),
+                                  height: 58,
+                                  width: 335,
+                                  decoration: BoxDecoration(
+                                      color: const Color(0xff5546FF),
+                                      borderRadius: BorderRadius.circular(60)),
+                                  child: Center(
+                                      child: Text("Get Started",
+                                          style: blueButtonFontStyling)),
+                                ),
                               ),
                             ),
                           ],

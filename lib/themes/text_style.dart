@@ -16,11 +16,32 @@ var tutorialDescriptionFont = GoogleFonts.urbanist(
   letterSpacing: 0.2,
 );
 
+var loginHeadlineFont = GoogleFonts.urbanist(
+  color: AppColors.headingColor,
+  fontWeight: FontWeight.w700,
+  fontSize: 32,
+  // letterSpacing: 12,
+);
+
+var loginMobileNumberFont = GoogleFonts.urbanist(
+  color: AppColors.headingColor,
+  fontWeight: FontWeight.w600,
+  fontSize: 16,
+  letterSpacing: 0.2,
+);
+
+var loginVerificationFont = GoogleFonts.urbanist(
+  color: AppColors.translucentBlack,
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+  letterSpacing: 0.2,
+);
+
 var headlineFont = GoogleFonts.urbanist(
   color: AppColors.headingColor,
-  fontWeight: FontWeight.normal,
-  fontSize: 16,
-  letterSpacing: 12,
+  fontWeight: FontWeight.w700,
+  fontSize: 14,
+  letterSpacing: 0.2,
 );
 
 var descriptionFont = GoogleFonts.urbanist(
