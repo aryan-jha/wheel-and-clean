@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wheel_and_clean/themes/colors.dart';
 import 'package:wheel_and_clean/themes/text_style.dart';
 
-
 class MyNumberTextFormField extends StatelessWidget {
-
   MyNumberTextFormField({
     super.key,
   });
@@ -26,7 +24,7 @@ class MyNumberTextFormField extends StatelessWidget {
           // focusNode:
           controller: phoneNumberController,
           keyboardType: TextInputType.numberWithOptions(),
-          
+
           decoration: InputDecoration(
               prefixIcon: Padding(
                 padding: const EdgeInsets.only(
@@ -52,6 +50,106 @@ class MyNumberTextFormField extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   borderSide: BorderSide(color: AppColors.textFieldColor))),
         ),
+      ),
+    );
+  }
+}
+
+class MyCard extends StatelessWidget {
+  String headline = "";
+  String discountedPrice = "";
+  String discount = "";
+  String actualPrice = "";
+
+  MyCard({
+    super.key,
+    required this.headline,
+    required this.discountedPrice,
+    required this.discount,
+    required this.actualPrice,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 187,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        border: Border.all(color: Color(0xffEBEBEB), width: 1),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 1, top: 12),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Image(
+                      height: 96,
+                      width: 108,
+                      image:
+                          AssetImage('assets/screensAsset/Group 161805.png')),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 12),
+                child: Text(
+                  '$headline',
+                  style: headlineFont,
+                ),
+              )
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Divider(
+              color: Color(0xffEBEBEB),
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.only(left: 20, right: 20, top: 8, bottom: 12),
+            child: Row(
+              children: [
+                Text(
+                  "\u20B9$discountedPrice/-",
+                  style: headlineFont.copyWith(fontSize: 16),
+                ),
+                SizedBox(width: 6),
+                Text(
+                  "\u20B9$actualPrice/-",
+                  style: headlineFont.copyWith(
+                      fontSize: 12, color: AppColors.translucentBlack),
+                ),
+                SizedBox(width: 6),
+                Container(
+                  height: 16,
+                  width: 62,
+                  decoration: BoxDecoration(
+                      color: AppColors.discountColor,
+                      borderRadius: BorderRadius.circular(3)),
+                  child: Center(
+                      child: Text(
+                    'Flat $discount% off',
+                    style: discountFont,
+                  )),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.166,
+                ),
+                button(value: "Add", height: 33, width: 93)
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
@@ -83,7 +181,9 @@ InkWell myPasswordTextFormField(
         decoration: InputDecoration(
 
             // prefixText: "+91",
-            hintText: hint,
+            hintText: "Password",
+            hintStyle: loginMobileNumberFont.copyWith(
+                color: AppColors.translucentBlack),
             focusColor: const Color.fromARGB(255, 255, 16, 16),
             filled: true,
             fillColor: (isFocused)
@@ -106,8 +206,7 @@ Container button(
     height: height,
     width: width,
     decoration: BoxDecoration(
-        color: const Color(0xff5546FF),
-        borderRadius: BorderRadius.circular(60)),
+        color: const Color(0xff5546FF), borderRadius: BorderRadius.circular(8)),
     child: Center(child: Text("$value", style: blueButtonFontStyling)),
   );
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wheel_and_clean/Splash_screen/splash_screen.dart';
 import 'package:wheel_and_clean/screens/login_screen.dart';
+import 'package:wheel_and_clean/screens/services_screen.dart';
 import 'package:wheel_and_clean/screens/temp_screen.dart';
 import 'package:wheel_and_clean/screens/tutorial_screen.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Loginscreen(),
+      home: const ServicesScreen(),
     );
   }
 }

@@ -51,6 +51,13 @@ var descriptionFont = GoogleFonts.urbanist(
     letterSpacing: 0.2,
 );
 
+var discountFont = GoogleFonts.urbanist(
+    color: Colors.white,
+    fontSize: 10,
+    fontWeight: FontWeight.w500,
+    // letterSpacing: 0.2,
+);
+
 var blueButtonFontStyling = GoogleFonts.urbanist(
   color: Color(0xffFFFFFF),
   fontSize: 16,
